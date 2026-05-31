@@ -31,11 +31,24 @@ export const summary =
 
 export const stints: Stint[] = [
   {
+    company: "RA Capital Management",
+    location: "Boston, MA",
+    span: "2026 — Present",
+    titles: [
+      { title: "Technology Business Partner", dateRange: "2026 — Present" },
+    ],
+    bullets: [
+      "Serve as the primary IT and technology strategy partner for RA Capital's Raven biotech incubator and Planetary Health investment teams, reporting to the CIO.",
+      "Translate the evolving needs of venture formation, portfolio company building, and investment operations into scalable technology solutions across AI, data analytics, and automation.",
+      "Accelerate company formation, due diligence, and investment decision-making through targeted technology advisory, platform delivery, and cross-portfolio standards.",
+    ],
+  },
+  {
     company: "Flagship Pioneering",
     location: "Cambridge, MA",
-    span: "2022 — Present",
+    span: "2022 — 2026",
     titles: [
-      { title: "Executive Director, AI Strategy", dateRange: "2025 — Present" },
+      { title: "Executive Director, AI Strategy", dateRange: "2025 — 2026" },
       { title: "Head of Digital Pioneering Medicines", dateRange: "2022 — 2025" },
     ],
     bullets: [
