@@ -5,28 +5,33 @@ import SectionReveal from "./SectionReveal";
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-20 sm:py-28 px-6">
+    <section id="education" className="relative py-24 sm:py-32 px-6 border-t border-border-soft">
       <div className="max-w-5xl mx-auto">
-        <SectionReveal className="mb-12 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-2">
+        <SectionReveal className="mb-16">
+          <div className="font-mono-label mb-4">§ 02 — Foundation</div>
+          <h2 className="font-display text-4xl sm:text-5xl text-warm leading-[1.05] tracking-tight">
             Education
           </h2>
         </SectionReveal>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6">
           {education.map((edu, i) => (
             <SectionReveal key={i} delay={i * 0.15}>
-              <div className="bg-surface border border-border rounded-xl p-6 card-glow transition-all duration-300 hover:border-accent/30 h-full">
-                <span className="text-xs font-medium text-accent tracking-wider uppercase">
-                  {edu.year}
-                </span>
-                <h3 className="text-lg font-semibold text-text-primary mt-2 mb-1">
-                  {edu.degree}
+              <div className="stint-card rounded-2xl p-7 h-full transition-all duration-300">
+                <div className="font-mono-label mb-4">Class of {edu.year}</div>
+                <h3 className="font-display text-xl sm:text-2xl text-warm leading-snug mb-2">
+                  {edu.school}
                 </h3>
-                <p className="text-sm text-text-secondary">{edu.school}</p>
-                <p className="text-sm text-text-secondary">{edu.location}</p>
+                <p className="text-text-primary text-[0.95rem] leading-snug mb-1">
+                  {edu.degree}
+                </p>
+                <p className="font-mono text-xs text-text-muted tracking-wide mb-4">
+                  {edu.location}
+                </p>
                 {edu.honors && (
-                  <p className="text-sm text-accent/80 mt-3">{edu.honors}</p>
+                  <p className="text-sm text-accent-soft/90 leading-relaxed border-t border-border-soft pt-4">
+                    {edu.honors}
+                  </p>
                 )}
               </div>
             </SectionReveal>

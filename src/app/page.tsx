@@ -8,25 +8,29 @@ import DachshundBiker from "@/components/DachshundBiker";
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      {/* Particle background - hero area */}
+      {/* Particle background */}
       <div className="fixed inset-0 z-0">
         <ParticleBackground />
       </div>
 
-      {/* Gradient overlay to fade particles behind content */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-bg" />
+      {/* Atmospheric layers — fine grid + vignette */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-grid opacity-60" />
+      <div className="fixed inset-0 z-0 pointer-events-none bg-vignette" />
+
+      {/* Soft fade so particles recede behind page content */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-b from-transparent via-bg/40 to-bg" />
 
       {/* Content */}
       <div className="relative z-10">
         <HeroSection />
-        <div className="bg-bg/80 backdrop-blur-sm">
+        <div className="relative bg-bg/85 backdrop-blur-[2px]">
           <ExperienceSection />
           <EducationSection />
           <ContactBar />
         </div>
       </div>
 
-      {/* Dachshund on bike - rides across as you scroll */}
+      {/* Dachshund on bike — rides across as you scroll */}
       <DachshundBiker />
     </main>
   );

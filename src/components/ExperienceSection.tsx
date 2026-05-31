@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { experiences } from "@/lib/resume-data";
+import { stints } from "@/lib/resume-data";
 import TimelineCard from "./TimelineCard";
 import SectionReveal from "./SectionReveal";
 
@@ -21,7 +21,6 @@ export default function ExperienceSection() {
 
     if (prefersReducedMotion || !lineRef.current || !cardsRef.current) return;
 
-    // Animate the timeline line drawing
     gsap.fromTo(
       lineRef.current,
       { scaleY: 0 },
@@ -30,28 +29,26 @@ export default function ExperienceSection() {
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 60%",
-          end: "bottom 80%",
+          start: "top 70%",
+          end: "bottom 85%",
           scrub: 1,
         },
       }
     );
 
-    // Animate cards
     const cards = cardsRef.current.children;
-    Array.from(cards).forEach((card, i) => {
-      const direction = i % 2 === 0 ? -60 : 60;
+    Array.from(cards).forEach((card) => {
       gsap.fromTo(
         card,
-        { opacity: 0, x: direction },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
-          x: 0,
-          duration: 0.7,
+          y: 0,
+          duration: 0.85,
           ease: "power2.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 85%",
+            start: "top 88%",
             once: true,
           },
         }
@@ -64,26 +61,35 @@ export default function ExperienceSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 sm:py-28 px-6 overflow-x-clip">
+    <section
+      ref={sectionRef}
+      id="experience"
+      className="relative py-24 sm:py-32 px-6 overflow-x-clip"
+    >
       <div className="max-w-5xl mx-auto">
-        <SectionReveal className="mb-16 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-2">
-            Experience
+        <SectionReveal className="mb-20">
+          <div className="font-mono-label mb-4">§ 01 — Career Record</div>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-warm leading-[1.05] mb-4 tracking-tight">
+            Eighteen years <span className="font-display-italic text-accent-soft">in motion</span>
           </h2>
-          <p className="text-text-secondary">17+ years driving digital transformation in biopharma</p>
+          <p className="max-w-xl text-text-secondary leading-relaxed">
+            Bioprocess floors to AI strategy — a record of moves between
+            roles, companies, and eras of biopharma.
+          </p>
         </SectionReveal>
 
-        <div className="relative">
-          {/* Timeline line (desktop only) */}
+        <div className="relative md:pl-0">
+          {/* Vertical rail aligned to the 1px rail column of each article's grid
+              (date col 8rem + gap-x-10 split = 8rem + 1.25rem = 9.25rem to rail start) */}
           <div
             ref={lineRef}
-            className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px timeline-line origin-top"
+            className="hidden md:block absolute top-0 bottom-0 w-px timeline-rail origin-top"
+            style={{ left: "calc(8rem + 1.25rem)" }}
           />
 
-          {/* Cards */}
-          <div ref={cardsRef} className="space-y-8 md:space-y-12">
-            {experiences.map((exp, i) => (
-              <TimelineCard key={i} experience={exp} index={i} />
+          <div ref={cardsRef} className="space-y-14 md:space-y-20">
+            {stints.map((stint, i) => (
+              <TimelineCard key={`${stint.company}-${i}`} stint={stint} />
             ))}
           </div>
         </div>

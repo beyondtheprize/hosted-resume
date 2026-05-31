@@ -1,8 +1,13 @@
-export interface Experience {
+export interface Title {
   title: string;
   dateRange: string;
+}
+
+export interface Stint {
   company: string;
   location: string;
+  span: string;
+  titles: Title[];
   bullets: string[];
 }
 
@@ -16,114 +21,92 @@ export interface Education {
 
 export const contactInfo = {
   name: "Matthew G. Schulze",
-  address: "49 Galen St. Waltham, MA 02451",
-  phone: "+1-978-846-1493",
+  location: "Greater Boston, MA",
   email: "mgschulz@bu.edu",
   linkedin: "https://www.linkedin.com/in/mattschulzemba/",
 };
 
 export const summary =
-  "AI-focused biopharma leader who scales digital and data for Biotechnology platforms, drives transformative, compliant initiatives from startup through M&A, and builds high-impact teams that deliver business-critical outcomes.";
+  "AI-focused biopharma leader who scales digital and data platforms, drives transformative compliant initiatives from startup through M&A, and builds high-impact teams that deliver business-critical outcomes.";
 
-export const experiences: Experience[] = [
+export const stints: Stint[] = [
   {
-    title: "Executive Director, AI Strategy",
-    dateRange: "2025 - Present",
     company: "Flagship Pioneering",
     location: "Cambridge, MA",
-    bullets: [],
-  },
-  {
-    title: "Head of Digital Pioneering Medicines",
-    dateRange: "2022 - 2025",
-    company: "Flagship Pioneering",
-    location: "Cambridge, MA",
+    span: "2022 — Present",
+    titles: [
+      { title: "Executive Director, AI Strategy", dateRange: "2025 — Present" },
+      { title: "Head of Digital Pioneering Medicines", dateRange: "2022 — 2025" },
+    ],
     bullets: [
-      "Product Owner for custom Agentic software that generates novel indication-target pairings for venture investment and compresses R&D portfolio analyses from weeks to hours, enabling realtime executive decision-making on investment and resource allocation.",
-      "Built business case for Generative AI-enabled Antibody Design across Pioneering Medicines programs; secured leadership approval of $3M investment and launched pilot.",
-      'Integrated "Artificial Mechanistic Intelligence" into QSP and PK/PD modeling workflows, improving predictive accuracy over traditional empirical approaches.',
-      "Led enterprise ChatGPT rollout across Flagship with structured enablement program, driving rapid adoption of domain-specific GPT tools.",
-      "As Senior Director on IT Leadership Team, developed and executed Pioneering Medicines' digital strategy, managing ~$3.5M annual budget and cross-functional technology initiatives.",
-      "Recognized for strategic leadership in transformation of a 60-person R&D unit into an integrated digital ecosystem for 130+ staff, implementing AI-driven research tools and cloud-based data management.",
-      "Developed Digital Clinical & Regulatory roadmap; implemented Flagship's first GxP-validated system (eQMS) and CSV framework to enable FDA-regulated clinical operations.",
-      "Co-founded the Digital CMC Consortium (Project Artemis), a cross-industry collaboration advancing digital transformation in drug development and manufacturing.",
+      "Led AI and digital strategy across R&D programs, translating scientific and business needs into scaled platforms and measurable outcomes.",
+      "Sponsored and delivered multiple generative AI initiatives from concept through pilot and adoption, with a strong focus on governance, compliance, and change management.",
+      "Built and operated a cross-functional digital organization (product, engineering, data, and operations), improving delivery velocity and stakeholder satisfaction.",
+      "Owned portfolio and budget planning for digital investments and technology partnerships.",
+      "Established validated quality and compliance frameworks to enable regulated clinical and research operations.",
     ],
   },
   {
-    title: "Head of Digital Biomanufacturing Applications",
-    dateRange: "2021 - 2022",
     company: "Resilience",
     location: "La Jolla, CA",
+    span: "2021 — 2022",
+    titles: [
+      { title: "Head of Digital Biomanufacturing Applications", dateRange: "2021 — 2022" },
+    ],
     bullets: [
-      "Directed the Resilience Digital Application strategy, implementing mission-critical systems to elevate manufacturing and research operations. Managed a $30M budget and drove M&A due diligence for high-profile transactions.",
-      "Recruited and built a 24-member team to deliver next-generation digital capabilities across Resilience, structured into Biomanufacturing Automation, Digital Quality Applications, Digital Quality Control, R&D Applications & Informatics, and Data Management.",
-      "Oversaw the rapid deployment of Veeva Platform Vaults for Quality and Kneat for e-Validation across six global manufacturing sites in under 25 weeks where there were no solutions before.",
-      "Led cross-functional teams to implement essential QC and R&D applications. Oversaw the deployment of Electronic Laboratory Notebook (ELN), Inventory and Registration tools, and a data hub.",
-      "Demonstrated adaptability by taking ownership beyond my role, leading the ERP project to streamline 3PL supply chain operations.",
+      "Set enterprise application strategy for manufacturing and R&D environments; prioritized programs across quality, lab, and operations functions.",
+      "Built and led a multi-disciplinary global team to deliver core digital capabilities and standardized processes.",
+      "Drove rapid implementation and stabilization of key quality and validation tooling across multiple sites.",
+      "Partnered with corporate functions on operational readiness, integration, and due diligence for major transactions.",
     ],
   },
   {
-    title: "Associate Director of Informatics & R&D Applications",
-    dateRange: "2020 - 2021",
     company: "Alkermes",
     location: "Waltham, MA",
+    span: "2018 — 2021",
+    titles: [
+      { title: "Associate Director of Informatics & R&D Applications", dateRange: "2020 — 2021" },
+      { title: "Manager of Development Applications", dateRange: "2018 — 2020" },
+    ],
     bullets: [
-      "Led Informatics and Data Engineering for Medicines Development across Research, Development, Clinical, and Regulatory domains, managing projects and a $2M technology budget.",
-      "Recognized with Key Contributor Award; stock-based equity award given to top performers.",
-      "Spearheaded comprehensive assessment of Alkermes R&D data landscape that delivered technology reference architectures, a definitive business case, and roadmap of projects.",
-      "Coordinated the delivery of strategic features for Computational Chemistry Idea generation platform, critical in meeting Alkermes 2020 goals.",
+      "Led informatics, applications, and data engineering across research and development functions, delivering platforms that improved scientific productivity and data reliability.",
+      "Produced enterprise assessments and roadmaps for R&D data and application ecosystems, aligning investment to business strategy.",
+      "Managed cross-functional delivery teams and vendors; developed talent and operating mechanisms for predictable execution.",
+      "Recognized with internal awards for sustained impact and leadership.",
     ],
   },
   {
-    title: "Manager of Development Applications",
-    dateRange: "2018 - 2020",
     company: "Alkermes",
     location: "Waltham, MA",
+    span: "2015 — 2018",
+    titles: [
+      { title: "Senior Systems Analyst", dateRange: "2015 — 2018" },
+    ],
     bullets: [
-      "Cultivated a dynamic team of 3-5 direct reports, 2-3 contractors, and Managed Services including Data Engineers, Systems Analysts, and Project Managers.",
-      "Handpicked as R&D IT Leader to advance the Corporate Data Foundation initiative.",
-      "Boosted Alkermes Vivitrol yearly revenue by ~$400,000 through implementing Alkermes' first Cloud High Performance Computing (HPC) environment.",
+      "Led global upgrades and system enhancements for laboratory and quality platforms, improving data integrity and operational continuity.",
+      "Delivered risk reduction and resiliency improvements for mission-critical systems supporting commercial operations.",
     ],
   },
   {
-    title: "Senior Systems Analyst",
-    dateRange: "2015 - 2018",
-    company: "Alkermes",
-    location: "Waltham, MA",
-    bullets: [
-      "Spearheaded a global ELN upgrade project, enhancing data management efficiency and integrity for product development teams.",
-      "Directed a global QC system initiative, introducing critical features and disaster recovery capabilities supporting $250M in annual sales.",
-    ],
-  },
-  {
-    title: "Senior Business Systems Analyst",
-    dateRange: "2013 - 2015",
     company: "Sanofi & Genzyme",
     location: "Framingham, MA",
+    span: "2010 — 2015",
+    titles: [
+      { title: "Senior Business Systems Analyst", dateRange: "2013 — 2015" },
+      { title: "Business Systems Analyst", dateRange: "2010 — 2013" },
+    ],
     bullets: [
-      "Served as Technical Project Lead for a lab quality system lifecycle, deploying systems across Europe and North America.",
-      "Awarded Genzyme Spot Award for key contributions in Chromatography Data System deployments.",
+      "Served as technical project lead for regulated lab and quality system deployments across regions, partnering with stakeholders to ensure adoption and compliance.",
     ],
   },
   {
-    title: "Business Systems Analyst",
-    dateRange: "2010 - 2013",
-    company: "Sanofi & Genzyme",
-    location: "Framingham, MA",
-    bullets: [],
-  },
-  {
-    title: "Sr Bioprocess Associate",
-    dateRange: "2009 - 2010",
     company: "Bristol-Myers Squibb",
     location: "Devens, MA",
-    bullets: [],
-  },
-  {
-    title: "Bioprocess Associate",
-    dateRange: "2008 - 2009",
-    company: "Bristol-Myers Squibb",
-    location: "Devens, MA",
+    span: "2008 — 2010",
+    titles: [
+      { title: "Sr Bioprocess Associate", dateRange: "2009 — 2010" },
+      { title: "Bioprocess Associate", dateRange: "2008 — 2009" },
+    ],
     bullets: [],
   },
 ];
@@ -134,7 +117,7 @@ export const education: Education[] = [
     degree: "Master of Business Administration with Honors",
     school: "Boston University",
     location: "Boston, MA",
-    honors: "Strategy & Innovation | Beta Gamma Sigma (Top 20%)",
+    honors: "Strategy & Innovation · Beta Gamma Sigma (Top 20%)",
   },
   {
     year: "2008",
